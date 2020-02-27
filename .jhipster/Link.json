@@ -1,0 +1,46 @@
+{
+    "name": "Link",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deviceId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "observation",
+            "otherEntityRelationshipName": "link",
+            "relationshipName": "observation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "assemblyLine",
+            "otherEntityRelationshipName": "link",
+            "relationshipValidateRules": "required",
+            "relationshipName": "assemblyline",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200227013100",
+    "entityTableName": "link",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
